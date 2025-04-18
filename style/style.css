@@ -6,7 +6,7 @@
 
 @font-face{
     font-family: "Director-Regular";
-    src: url(/assets/font/Director-Regular.otf);
+    src: url(assets/font/Director-Regular.otf);
 }
 
 
@@ -116,7 +116,7 @@ main {
   }
   
   #submissionInfo.show {
-    max-height: 4100px; /* or enough to hold the text comfortably */
+    max-height: 4100px;
     opacity: 1;
     margin-bottom: 1rem;
   }
@@ -135,7 +135,7 @@ main {
   }
   
   #panelInfo.show {
-    max-height: 2000px; /* or enough to hold the text comfortably */
+    max-height: 2000px;
     opacity: 1;
     margin-bottom: 1rem;
   }
@@ -278,7 +278,6 @@ main {
     .step_item ul{
         margin-top: .5rem;
         margin-left: .8rem;
-        /* font-size: .8rem; */
     
         list-style-type: disc;
         list-style-position: inside;
