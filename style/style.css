@@ -1,0 +1,288 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: "Director-Regular";
+    src: url(/assets/font/Director-Regular.otf);
+}
+
+
+:root {
+    --primary-bg-color: #fafd28;
+    --font-family: "Director-Regular";
+    --font-size-large: 2.5rem;
+    --font-size-small: 1.5rem;
+    --padding-small: 1rem;
+    --padding-medium: 2rem;
+}
+
+
+body {
+    background: var(--primary-bg-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size-large);
+    color: black;
+}
+
+
+main {
+    width: 100%;
+    font-size: var(--font-size-large);
+    padding: var(--padding-small);
+}
+  
+.intro {
+    margin-bottom: var(--padding-medium);
+}
+  
+
+/* HOW TO ? */
+  
+  .how_to a {
+    display: inline-block;
+    text-decoration: underline;
+    color: black;
+    cursor: pointer;
+  }
+
+  .step_title {
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-size: var(--font-size-small);
+    margin-top: var(--padding-small);
+    margin-bottom: var(--padding-small);
+}
+
+  .step_text{
+    margin-left: 7rem;
+    margin-right: 14rem;
+  }
+
+  .step_item ul{
+    margin-left: 8rem;
+
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+
+
+  /* ARCHIVE */
+  
+  .archive {
+    margin-top: 2rem;
+  }
+
+  .archive span{
+    text-decoration: line-through;
+  }
+  
+  .archive sup {
+    vertical-align: super;
+    margin-left: 3px;
+  }
+
+
+  
+  footer {
+    margin-top: 4rem;
+    text-align: right;
+    color: #333;
+  }
+
+  .logo-text{
+    position: fixed;
+    bottom: 1rem;
+    width: 650px;
+    cursor: pointer;
+  }
+
+
+
+  #submissionInfo {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    transition:
+        max-height 1s ease-in-out,
+        opacity 1s ease-in-out,
+        padding 1s ease-in-out,
+        margin 1s ease-in-out;
+  }
+  
+  #submissionInfo.show {
+    max-height: 4100px; /* or enough to hold the text comfortably */
+    opacity: 1;
+    margin-bottom: 1rem;
+  }
+
+  #panelInfo {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    transition:
+        max-height 1s ease-in-out,
+        opacity 1s ease-in-out,
+        padding 1s ease-in-out,
+        margin 1s ease-in-out;
+  }
+  
+  #panelInfo.show {
+    max-height: 2000px; /* or enough to hold the text comfortably */
+    opacity: 1;
+    margin-bottom: 1rem;
+  }
+
+  
+
+
+  .toggle-box {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    transition:
+        max-height 1s ease-in-out,
+        opacity 1s ease-in-out,
+        padding 1s ease-in-out,
+        margin 1s ease-in-out;
+  }
+  
+  .toggle-box.show {
+    max-height: 2500px;
+    opacity: 1;
+    margin-bottom: 1rem;
+  }
+
+
+  #read_more span {
+    align-self: right;
+  }
+
+  #read_more figure {
+    display: flex;
+  }
+
+  #read_more img {
+    width: 700px;
+  }
+
+  #read_more figcaption {
+    font-size: 1rem;
+    writing-mode: vertical-rl;
+    height: 550px;
+  }
+
+  a{
+    color: black;
+  }
+
+  a:hover{
+    color: #A09BE7;
+  }
+
+
+  /* background svg animation */
+  .svg-background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .bg-svg {
+    position: absolute;
+    width: 150px;
+    opacity: 0;
+    animation: fadeInOut 1s infinite ease-in-out;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+      }
+      20%, 75% {
+        opacity: 1;
+      }
+  }
+  
+
+
+
+/* Smaller mobile view */
+@media (max-width: 480px) {
+
+    :root {
+        --primary-bg-color: #fafd28;    
+        --font-family: "Director-Regular";
+        --font-size-large: 1.05rem;
+        --font-size-small: .75rem;
+        --padding-small: .5rem;
+        --padding-medium: 1rem;
+    }
+
+    .bg-svg {
+        width: 100px;
+    }
+
+    .intro_container{
+        letter-spacing: -.05rem;
+        hyphens: auto;
+    }
+
+    .logo-text{
+        bottom: .5rem;
+        width: 300px;
+    }
+
+    #read_more img {
+        width: 300px;
+        height: 400px;
+    }
+    
+    #read_more figcaption {
+        font-size: .75rem;
+        writing-mode: vertical-rl;
+        height: 350px;
+    }
+
+    .how_to{
+        letter-spacing: -.05rem;
+    }
+
+
+    .step_title{
+        margin-top: 1.5rem;
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+      }
+
+    .step_text{
+        margin-left: 0;
+        margin-right: 0;
+      }
+    
+    .step_item ul{
+        margin-top: .5rem;
+        margin-left: .8rem;
+        /* font-size: .8rem; */
+    
+        list-style-type: disc;
+        list-style-position: inside;
+      }
+    
+}
+  
