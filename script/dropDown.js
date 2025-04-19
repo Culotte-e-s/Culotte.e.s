@@ -1,8 +1,8 @@
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const toggleLinks = document.querySelectorAll(".toggle-link");
-    const logoText = document.getElementById("culotte-logo"); // Target the logo by ID
-    const hiddenDivs = document.querySelectorAll(".toggle-box"); // All hidden divs
-    const svg = document.getElementById("svg"); // Target the logo by ID
+    const logoText = document.getElementById("culotte-logo");
+    const hiddenDivs = document.querySelectorAll(".toggle-box");
+    const svg = document.getElementById("svg");
 
 
     toggleLinks.forEach(link => {
@@ -13,24 +13,26 @@
 
             if (target) {
                 target.classList.toggle("show");
-                // svg.style.display = 'none';
                 if (target.classList.contains("show")) {
-                  svg.style.display = 'none'; // Hide the SVG when content is shown
-              } else {
-                  svg.style.display = 'block'; // Show the SVG when content is hidden
+                  svg.style.display = 'none';
+                  if (link.textContent === 'Read More...') {
+                    link.textContent = 'Read Less...';
+                }
+                } else {
+                  svg.style.display = 'block';
+                  if (link.textContent === 'Read Less...') {
+                    link.textContent = 'Read More...';
+                }
               }
             }
-
-
         });
     });
 
-    // When the logo text is clicked, hide all the divs with the 'toggle-box' class
+
     logoText.addEventListener("click", function() {
         hiddenDivs.forEach(div => {
-            div.classList.remove("show"); // Remove the 'show' class to hide the div
+            div.classList.remove("show");
         });
         svg.style.display = 'block';
     });
 });
-
