@@ -161,7 +161,6 @@ main {
     margin-bottom: 1rem;
   }
 
-
   #read_more span {
     align-self: right;
   }
@@ -188,7 +187,6 @@ main {
     color: #A09BE7;
   }
 
-
   /* background svg animation */
   .svg-background {
     display: block;
@@ -204,7 +202,7 @@ main {
   
   .bg-svg {
     position: absolute;
-    width: 150px;
+    width: 200px;
     opacity: 0;
     animation: fadeInOut 1s infinite ease-in-out;
   }
