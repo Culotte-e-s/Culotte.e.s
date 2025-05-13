@@ -6,7 +6,7 @@
 
 @font-face{
     font-family: "Director-Regular";
-    src: url(Director-Regular.woff2) format('woff2');
+    src: url(/assets/font/Director-Regular.woff2) format(woff2);
 }
 
 
@@ -115,7 +115,7 @@ main {
   }
   
   #submissionInfo.show {
-    max-height: 4100px;
+    max-height: 4100px; /* or enough to hold the text comfortably */
     opacity: 1;
     margin-bottom: 1rem;
   }
@@ -134,7 +134,7 @@ main {
   }
   
   #panelInfo.show {
-    max-height: 2000px;
+    max-height: 2000px; /* or enough to hold the text comfortably */
     opacity: 1;
     margin-bottom: 1rem;
   }
@@ -187,6 +187,74 @@ main {
     color: #A09BE7;
   }
 
+
+
+
+  /* Archive */
+
+  .publication_container{
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    justify-content: left;
+  }
+
+  .publication_container .item{
+    flex: 0 0 auto;
+    width: 50px;
+  }
+
+  .publication_container figure img{
+    width: 100%;
+  }
+
+
+  .publication_container_images{
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .1rem;
+    justify-content: left;
+  }
+
+  .publication_container_info{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    margin-bottom: 50px;
+  }
+
+  .publication_container_info p{
+    font-size: 1rem;
+  }
+
+
+
+  /* Image preview */
+  .image-preview {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    max-width: 90vw;       /* Responsive width cap */
+    max-height: 90vh;      /* Prevent going off-screen vertically */
+    z-index: 9999;
+    display: none;
+    pointer-events: none;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .image-preview img {
+    max-width: 100%;
+    max-height: 80vh;      /* Adjusted to give space for caption */
+    height: auto;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+
+
   /* background svg animation */
   .svg-background {
     display: block;
@@ -208,12 +276,15 @@ main {
   }
   
   @keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0;
-      }
-      20%, 75% {
-        opacity: 1;
-      }
+    10% {
+        opacity: 1; /* Element appears immediately */
+    }
+    80% {
+        opacity: 1; /* Keep the element visible for the majority of the animation */
+    }
+    100% {
+        opacity: 0; /* Fade the element out */
+    }
   }
   
 
@@ -280,5 +351,19 @@ main {
         list-style-position: inside;
       }
     
+
+      .image-preview {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        max-width: 80vw;       /* Responsive width cap */
+        max-height: 70vh;      /* Prevent going off-screen vertically */
+        z-index: 9999;
+        display: none;
+        pointer-events: none;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
 }
   
